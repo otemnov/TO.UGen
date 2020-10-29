@@ -4,7 +4,7 @@ namespace TO.UGen
 {
 	public sealed class SimpleGuidGenerator : IGuidGenerator 
 	{
-		public Guid CreateNew()
+		public Guid NewGuid()
 		{
 			return Guid.NewGuid();
 		}

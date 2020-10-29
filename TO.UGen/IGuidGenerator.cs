@@ -4,7 +4,7 @@ namespace TO.UGen
 {
 	public interface IGuidGenerator
 	{
-		Guid CreateNew();
+		Guid NewGuid();
 	}
 
 	public interface ICombGuidGenerator : IGuidGenerator

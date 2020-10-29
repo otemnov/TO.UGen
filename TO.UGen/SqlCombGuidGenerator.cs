@@ -20,7 +20,7 @@ namespace TO.UGen
 		/// Checkout a reason why we set time as last 6 bytes for MsSql
 		/// https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/comparing-guid-and-uniqueidentifier-values
 		/// </summary>
-		public Guid CreateNew()
+		public Guid NewGuid()
 		{
 			var gBytes = Guid.NewGuid().ToByteArray();
 			var dateBytes = _converter.ToBytes(DateTime.Now);

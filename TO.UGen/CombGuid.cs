@@ -6,9 +6,9 @@ namespace TO.UGen
 	{
 		public static readonly ICombGuidGenerator Sql = new SqlCombGuidGenerator();
 
-		public static Guid CreateNew()
+		public static Guid NewGuid()
 		{
-			return Sql.CreateNew();
+			return Sql.NewGuid();
 		}
 	}
 }
