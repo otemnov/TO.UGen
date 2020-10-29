@@ -9,20 +9,6 @@ namespace TO.UGen.Tests
 	public class SqlCombGuidGeneratorTests
 	{
 		[Fact]
-		public void CreateNewNotEmpty()
-		{
-			var generator = new SqlCombGuidGenerator();
-			generator.CreateNew().Should().NotBeEmpty();
-		}
-
-		[Fact]
-		public void CreateNewNoDuplicates()
-		{
-			var generator = new SqlCombGuidGenerator();
-			generator.CreateNew().Should().NotBe(generator.CreateNew());
-		}
-
-		[Fact]
 		public void CreateInSqlOrder()
 		{
 			var generator = new SqlCombGuidGenerator();
@@ -30,7 +16,7 @@ namespace TO.UGen.Tests
 			{
 				//need sleep ms to distribute ids by time, as we keep milliseconds data only
 				Thread.Sleep(1);
-				return generator.CreateNew();
+				return generator.NewGuid();
 			}).ToList();
 
 			var sql = raw.Select(x => new SqlGuid(x)).ToList();
