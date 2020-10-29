@@ -1,2 +1,1 @@
-# TO.UGen
-Comb Guid 
+Comb guid for SQL Server
