@@ -18,7 +18,7 @@ namespace TO.UGen.Tests
 		public void ConvertInUtc()
 		{
 			var bd = new DateTime(1984, 8, 21, 0, 0, 0, DateTimeKind.Unspecified);
-			var bdByTokyo = TimeZoneInfo.ConvertTime(bd, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time"));
+			var bdByTokyo = TimeZoneInfo.ConvertTime(bd, TimeZoneInfo.CreateCustomTimeZone("Test Time Zone", TimeSpan.FromHours(-5), null, null));
 			var converter = new UnixDateTimeConverter();
 
 			converter.ToUtcDateTime(converter.ToBytes(bdByTokyo)).Should().Be(bdByTokyo.ToUniversalTime());
